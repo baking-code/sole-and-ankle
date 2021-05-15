@@ -36,6 +36,7 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          {variant === 'default' ? null : <Banner variant={variant}>{variant === 'on-sale' ? "Sale" : "Just released!"}</Banner>}
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
@@ -50,18 +51,33 @@ const ShoeCard = ({
   );
 };
 
+const Banner = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 0;
+  margin-right: -8px;
+  padding: 8px;
+  color: white;
+  font-weight: ${WEIGHTS.normal};
+  background-color: ${props => props.variant === 'on-sale' ? COLORS.primary : COLORS.secondary }
+`;
+
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
 `;
 
-const Wrapper = styled.article``;
+const Wrapper = styled.article`
+min-width: 200px;
+  max-width: 400px;`;
 
 const ImageWrapper = styled.div`
   position: relative;
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+  min-width: 200px;
+  max-width: 400px;`;
 
 const Row = styled.div`
   font-size: 1rem;
