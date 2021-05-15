@@ -65,22 +65,25 @@ const Banner = styled.div`
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
+  min-width: 275px;
+  max-width: 450px;
+  flex: 1;;
 `;
 
-const Wrapper = styled.article`
-min-width: 200px;
-  max-width: 400px;`;
+const Wrapper = styled.article``;
+
 
 const ImageWrapper = styled.div`
   position: relative;
 `;
 
 const Image = styled.img`
-  min-width: 200px;
-  max-width: 400px;`;
+  width: 100%;`;
 
 const Row = styled.div`
   font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Name = styled.h3`
